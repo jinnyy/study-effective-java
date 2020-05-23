@@ -159,10 +159,12 @@ private static long sum() {
 
 <details>
   <summary>문제가 되는 부분 보기</summary>
-  <p>
-	  Long sum (박싱된 타입) 이 아닌, <br>
-	  long sum (기본 타입)으로 선언했어야 함
-  </p>
+
+```
+Long sum (박싱된 타입) 이 아닌,
+long sum (기본 타입)으로 선언했어야 함
+```
+
 </details>
 
 

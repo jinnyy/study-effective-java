@@ -115,6 +115,10 @@ public Object pop() {
 * 시간이 지날 수록 엔트리의 가치를 떨어뜨리는 방식을 흔히 사용
 	* 보통 캐시 엔트리의 유효 기간을 정확히 정의하기 어렵기 때문에
 
+#### 추가
+* ehCache의 경우 이런 옵션을 줄 수 있음
+  * timeToIdleSeconds="300" 
+  * timeToLiveSeconds="600"
 
 <br><br>
 

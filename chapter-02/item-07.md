@@ -30,7 +30,7 @@
 #### 메모리 누수 찾기
 ``` java
 public class Stack {
-	private Obkect[] elements;
+	private Object[] elements;
 	private int size = 0;
 	private static final int DEFAULT_INITIAL_CAPACITY = 16;
 	
@@ -60,7 +60,7 @@ public class Stack {
 #### 정답
 * 스택이 커졌다가 줄어들었을 때 스택에서 꺼내진 객체들을 가비지 컬렉터가 회수하지 않는다.
 * 프로그램에서 그 객체들을 더이상 사용하지 않더라도!
-* 스택이 그 객체들의 **`다 쓴 참조(obsolete reference)`**를 여전히 가지고 있기 때문
+* 스택이 그 객체들의 **`다 쓴 참조(obsolete reference)`** 를 여전히 가지고 있기 때문
 
 #### 해결방법
 * 해당 참조를 다 썼을 때 null 처리 (참조 해제)

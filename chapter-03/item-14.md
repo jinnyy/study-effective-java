@@ -75,6 +75,8 @@ public int compareTo(PhoneNumber pn) {
 }
 ```
 ```java
+/* 메서드 연쇄 방식 */
+
 private final Comparator<PhoneNumber> COMPARATOR =
   comparingInt((PhoneNumber pn) -> pn.areaCode)
     .thenComparingInt(pn -> pn.prefix)

@@ -35,7 +35,7 @@ Set 인터페이스를 구현하고 순서를 보장한 SortedSet 인터페이�
 
 compareTo와 equlas가 일관되지 않은 `BigDecimal` 클래스를 예로 들어보자. 빈 HashSet 인스턴스에 `new BigDecimal("1.0")`과 `new BigDecimal("1.00")`을 차례로 추가한다. 두 인스턴스는 equals 메소드로 비교하면 서로 다르기 때문에 `HashSet`은 원소를 2개 갖게 된다. 그러나 HashSet 대신 `TreeSet`을 사용하면 원소를 1개만 갖게 된다. compareTo 메소드로 비교하면 두 인스턴스가 같기 때문이다.
 
-<br><br>
+<br>
 
 ## 2. `compareTo` 메서드 작성 요령
 
@@ -119,7 +119,7 @@ static Comparator<Object> hashCodeOrder =
 ```
 
 
-<br><br>
+<br>
 
 > **네 줄 요약:** 순서를 고려해야 하는 값 클래스를 작성한다면 꼭 Comparable 인터페이스를 구현하여, 그 인스턴스들을 쉽게 정렬하고, 검색하고, 비교 기능을 제공하는 컬렉션과 어우러지도록 해야 한다. compareTo 메서드에서 필드의 값을 비교할 때 <와 > 연산자는 쓰지 말아야 한다. 그 대신 박싱된 기본 타입 클래스가 제공하는 정적 compare 메서드나 Comparator 인터페이스가 제공하는 비교자 생성 메서드를 사용하자.
 

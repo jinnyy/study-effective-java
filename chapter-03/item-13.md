@@ -42,6 +42,7 @@ public class PhoneNumber implements Cloneable {
 
 * 가변 객체를 참조하는 클래스.. 🤯
 
+  * Object의 clone 기본 규약은 shallow copy를 이용하기 때문에, 배열과 같은 가변 필드는 원본 필드와 객체를 공유하게 된다.
   * 가변 객체의 clone을 재귀적으로 호출한다 -> **가변 객체를 참조하는 필드는 final로 선언하라는 일반 용법**과 충돌한다
   * 가변 객체가 deep copy(깊은 복사)를 지원하도록 보장한다
   * 가변 객체를 재생성하는 고수준 메서드를 호출한다 -> 느리고, 필드 단위 객체 복사를 우회하기 때문에 Cloneable 아키텍처와 어울리지 않는 방식이다

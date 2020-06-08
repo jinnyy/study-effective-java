@@ -68,7 +68,7 @@ public interface PhysicalConstants {
 
 ``` java
 // import 문에 static 키워드 사용
-import static effecticejava.chapter4.item22.constantutilityclass.Physical
+import static effecticejava.chapter4.item22.constantutilityclass.Physical;
 
 public class Test {
   double atoms(double mols) {

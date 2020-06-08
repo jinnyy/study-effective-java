@@ -6,7 +6,7 @@
 <br><br><br><br><br>
 
 
-### 자바가 제공하는 다중 구현 메커니즘
+## 자바가 제공하는 다중 구현 메커니즘
 
 <table>
 <thead>
@@ -58,7 +58,7 @@
 
 
 
-### 골격 구현 (Skeletal Implementation)
+## 골격 구현 (Skeletal Implementation)
 인터페이스와 추상 골격 구현 클래스를 함께 제공함으로써 인터페이스와 추상 클래스의 장점을 모두 취할 수 있다.
 
 * 템플릿 메소드 패턴
@@ -67,6 +67,74 @@
 * 관례: 인터페이스 이름이 Inferface 이면 골격 구현 클래스 이름은 AbstractInterface로 짓는다.
 
 
+#### 예
+``` java
+// 코드 20-1 골격 구현을 사용해 완성한 구체 클래스 (133쪽)
+public class IntArrays {
+    static List<Integer> intArrayAsList(int[] a) {
+        Objects.requireNonNull(a);
+
+        // 다이아몬드 연산자를 이렇게 사용하는 건 자바 9부터 가능하다.
+        // 더 낮은 버전을 사용한다면 <Integer>로 수정하자.
+        return new AbstractList<>() {
+            @Override public Integer get(int i) {
+                return a[i];  // 오토박싱(아이템 6)
+            }
+
+            @Override public Integer set(int i, Integer val) {
+                int oldVal = a[i];
+                a[i] = val;     // 오토언박싱
+                return oldVal;  // 오토박싱
+            }
+
+            @Override public int size() {
+                return a.length;
+            }
+        };
+    }
+
+    public static void main(String[] args) {
+        int[] a = new int[10];
+        for (int i = 0; i < a.length; i++)
+            a[i] = i;
+
+        List<Integer> list = intArrayAsList(a);
+        Collections.shuffle(list);
+        System.out.println(list);
+    }
+}
+```
 
 
 
+``` java
+// 코드 20-2 골격 구현 클래스 (134-135쪽)
+public abstract class AbstractMapEntry<K,V>
+        implements Map.Entry<K,V> {
+    // 변경 가능한 엔트리는 이 메서드를 반드시 재정의해야 한다.
+    @Override public V setValue(V value) {
+        throw new UnsupportedOperationException();
+    }
+    
+    // Map.Entry.equals의 일반 규약을 구현한다.
+    @Override public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Map.Entry))
+            return false;
+        Map.Entry<?,?> e = (Map.Entry) o;
+        return Objects.equals(e.getKey(),   getKey())
+                && Objects.equals(e.getValue(), getValue());
+    }
+
+    // Map.Entry.hashCode의 일반 규약을 구현한다.
+    @Override public int hashCode() {
+        return Objects.hashCode(getKey())
+                ^ Objects.hashCode(getValue());
+    }
+
+    @Override public String toString() {
+        return getKey() + "=" + getValue();
+    }
+}
+```

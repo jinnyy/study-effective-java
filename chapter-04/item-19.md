@@ -25,10 +25,10 @@
 public class Super {
     // [!] 생성자가 재정의가능 메소드를 호출한다.
     public Super() {
-        overrideMe();
+        오버라이드();
     }
     
-    public void overrideMe() {
+    public void 오버라이드() {
     }
 }
 
@@ -42,21 +42,37 @@ public final class Sub extends Super {
     
     // 상위 클래스(Super)의 생성자가 호출한다.
     @Override
-    public void overrideMe() {
+    public void 오버라이드() {
         System.out.println(instant);
     }
     
     public static void main(String[] args) {
         Sub sub = new Sub();  // null
-        sub.overrideMe();     // 값
+        sub.오버라이드();     // 값
     }
 }
 ```
 
 - instant를 두 번 출력할 것 같지만?
 - instant는 final 필드이지만 위 코드에서는 상태가 두 개이다. 처음에 null이 출력된다.
-- 
+- (부모 클래스 -> 자식 클래스 순서로 호출됨)
 
+#### 실행 순서
+* main()에서 Sub() 호출
+* Sub()
+  - Sub()의 맨 윗줄에서 super() 호출
+* (부모 클래스인) Super() 호출
+  - Super() 안에서 오버라이드() 호출
+  - Sub.오버라이드()가 호출됨
+    - instant(초기화되기 전) 값 프린트
+  - Super() 종료
+* Sub()로 돌아옴
+* Sub() 안에서 오버라이드() 호출
+  - Instant 초기화
+  - Sub() 종료
+* main()으로 돌아옴
+* 오버라이드 호출
+  - 초기화된 instant 값 프린트
 
 
 <br>

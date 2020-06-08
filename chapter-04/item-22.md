@@ -45,6 +45,7 @@ public interface PhysicalConstants {
   - 예
   ``` java
   public class PhysicalConstants {
+      // 참고: 자바 7부터 숫자 리터럴에 _(밑줄) 허용
       // 아보가드로 수 (1/몰)
       public static final double AVOGADROS_NUMBER   = 6.022_140_857e23;
 
@@ -60,3 +61,18 @@ public interface PhysicalConstants {
 * 클래스 내부에서 private으로 구현하면 되겠죠?
 
 
+<br>
+
+#### 참고 
+빈번하게 사용할 것이라면 static import 가능
+
+``` java
+// import 문에 static 키워드 사용
+import static effecticejava.chapter4.item22.constantutilityclass.Physical
+
+public class Test {
+  double atoms(double mols) {
+    return AVOGADROS_NUMBER * mols;
+  }
+}
+```

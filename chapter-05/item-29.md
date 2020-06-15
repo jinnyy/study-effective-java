@@ -40,8 +40,6 @@ public class Stack {
   * 코드가 더 짧고, 형변환을 배열 생성시 단 한번만 해주면 되기 때문에 현업에서 선호된다
 
 ```java
-private E[] elements;
-
 // 배열 elements는 push(E)로 넘어온 E 인스턴스만 담는다
 @SuppressWarnings("unchecked")
 public Stack() {

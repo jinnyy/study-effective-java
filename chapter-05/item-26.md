@@ -31,7 +31,7 @@ Stamp stamp = (stamp) stamps.iterator().next(); // ClassCastException을 던진�
 
   ```java
   public static void main(String[] args) {
-    List<String> strings = new ArrayList<>
+    List<String> strings = new ArrayList<> ();
     unsafeAdd(strings, Integer.valueOf(42));
     String s = strings.get(0); // 컴파일러가 자동으로 형변환 코드를 넣어준다 - ClassCastException
   }
@@ -45,7 +45,7 @@ Stamp stamp = (stamp) stamps.iterator().next(); // ClassCastException을 던진�
   
   ```java
   public static void main(String[] args) {
-    List<String> strings = new ArrayList<>
+    List<String> strings = new ArrayList<> ();
     unsafeAdd(strings, Integer.valueOf(42));
     String s = strings.get(0); // incompatible types error
   }

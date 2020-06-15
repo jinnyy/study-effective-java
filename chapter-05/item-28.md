@@ -36,7 +36,7 @@ list.add("타입이 달라 넣을 수 없다.");
 
 ## 2. 제네릭 배열 생성은 허용되지 않는다
 
-* new List<E>[], new List<String>[], new E[] 식으로 작성하면 컴파일시 오류를 일으킨다
+* `new List<E>[]`, `new List<String>[]`, `new E[]` 식으로 작성하면 컴파일시 오류를 일으킨다
 
 ```java
 List<String>[] stringLists = new List<String>[1]; // 제네릭 배열 생성이 허용된다고 가정해보자

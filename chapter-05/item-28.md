@@ -14,12 +14,12 @@
 /* Runtime Error */
 
 Object[] array = new Long[1];
-array[0] = "타입이 달라 넣을 수 없다."  // ArrayStoreException
+array[0] = "타입이 달라 넣을 수 없다.";  // ArrayStoreException
 
 /* Compile Error */
 
-List<Object> list = new ArrayList<Long>();
-list.add("타입이 달라 넣을 수 없다.")
+List<Object> list = new ArrayList<Long>(); // incompatible types error
+list.add("타입이 달라 넣을 수 없다.");
 ```
 
 2. 배열은 실체화된다

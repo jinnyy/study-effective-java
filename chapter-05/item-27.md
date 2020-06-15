@@ -1,6 +1,6 @@
 # 27. 비검사 경고를 제거하라
 
-> **What is an "unchecked" warning?**
+> **[What is an "unchecked" warning?](http://www.angelikalanger.com/GenericsFAQ/FAQSections/TechnicalDetails.html#FAQ001)**
 > A warning by which the compiler indicates that it cannot ensure type safety. The term "unchecked" refers to the fact that the compiler and the runtime system do not have enough type information to perform all type checks that would be necessary to ensure type safety. In this sense, certain operations are "unchecked". 
 
 <br>

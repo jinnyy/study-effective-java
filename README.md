@@ -29,7 +29,7 @@
 
 ## 4장 클래스와 인터페이스
 
-* 아이템 15. 클래스와 멤버의 접근 권한을 최소화하라
+* 아이템 15. [클래스와 멤버의 접근 권한을 최소화하라](https://github.com/jinnyy/study-effective-java/blob/master/chapter-04/EffectiveJava%20Item15~18.key)
 * 아이템 16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라
 * 아이템 17. 변경 가능성을 최소화하라
 * 아이템 18. 상속보다는 컴포지션을 사용하라
@@ -51,3 +51,10 @@
 * 아이템 31. 한정적 와일드카드를 사용해 API 유연성을 높이라
 * 아이템 32. 제네릭과 가변인수를 함께 쓸 때는 신중하라
 * 아이템 33. 타입 안전 이종 컨테이너를 고려하라
+
+## 6장 열거 타입과 애너테이션
+
+* [아이템 34. int 상수 대신 열거 타입을 사용하라](https://github.com/jinnyy/study-effective-java/blob/master/chapter-06/EffectiveJava%20Item34_37.key)
+* 아이템 35. ordinal 대신 인스턴스 필드를 사용하라
+* 아이템 36. 비트 필드 대신 EnumSet을 사용하라
+* 아이템 37. ordinal 인덱싱 대신 EnumMap을 사용하라

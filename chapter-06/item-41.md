@@ -8,8 +8,8 @@
 : 아무 메소드도 담고 있지 않고, 자신을 구현하는 클래스가 특정 속성을 가짐을 표현해주는 인터페이스
 
 > 예: Serializable 인터페이스 (12장)
->
-> [Serializable이란?](https://nesoy.github.io/articles/2018-04/Java-Serialize)
+> - Serializable은 자신을 implement한 클래스는 ObjectOutputStream을 통해 write할 수 있다고, 즉 직렬화할 수 있다고 알려줌
+> - 참고 - [Serializable이란?](https://nesoy.github.io/articles/2018-04/Java-Serialize)
 
 
 <br><br>

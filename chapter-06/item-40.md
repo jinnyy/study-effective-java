@@ -41,9 +41,12 @@ public class Bigram {
 
 <br>
 
+
 ## 원인
 * equals()를 `override`하지 않고 `overload` 했습니다;
 * Object의 equals()를 재정의하려면 매개변수 타입을 Object로 해야 하는데, Bigram으로 했다.
+
+<br>
 
 
 ## 해결방법
@@ -75,8 +78,10 @@ public boolean equals(Bigram b) {
 
 
 ## 결론
-
 상위 클래스의 메소드를 재정의하려는 모든 메소드에 @Override 애너테이션을 달자.
+
+<br><br><br>
+
 
 
 

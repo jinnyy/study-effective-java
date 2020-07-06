@@ -25,7 +25,7 @@ Function<T,R> | R apply(T t) | Arrays::asList
 Supplier | T get() | Instant::now 
 Consumer | void accept(T t) | System.out::println
 
-<br><br>
+<br>
 
 Example: 
 
@@ -37,12 +37,26 @@ Example:
 // 표준 함수형 인터페이스 사용
 BiPredicate<Map<K,V>, Map.Entry<K,V>>
 ```
+<br><br>
 
 ## 전용 함수형 인터페이스 구현이 필요한 경우
 
 * 자주 쓰이며, 이름 자체가 용도를 명확히 설명해준다
 * 반드시 따라야 하는 규약이 있다
 * 유용한 디폴트 메서드를 제공할 수 있다
+
+``` java
+@FunctionalInterface
+public interface Test {
+    default boolean test1(String devljh) { return true; }
+    static boolean test2(String redboy) { return true; }
+    boolean test3(int o);
+}
+```
+
+* 사용하고자 하는 표준 함수형 인터페이스가 없을 때 : 매개변수를 3개받는 Predicate은 없다
+
+<br>
 
 #### @FunctionalInterface
 
@@ -53,6 +67,6 @@ BiPredicate<Map<K,V>, Map.Entry<K,V>>
 
 <br><br>
 
-> 용도에 맞는 것이 있다면 직접 구현하지 말고 표준 함수형 인터페이스를 사용하자
-> 표준 함수형 인터페이스는 대부분 기본 타입 지원 (박싱된 타입 사용 X -> 성능이 안좋음)
-> 직접 만든 함수형 인터페이스에는 @FunctionalInterface 사용
+> * 용도에 맞는 것이 있다면 직접 구현하지 말고 표준 함수형 인터페이스를 사용하자
+> * 표준 함수형 인터페이스는 대부분 기본 타입 지원 (박싱된 타입 사용 X -> 성능이 안좋음)
+> * 직접 만든 함수형 인터페이스에는 @FunctionalInterface 사용

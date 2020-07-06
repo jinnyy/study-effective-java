@@ -119,7 +119,7 @@ public static void main(String[] args) throws IOException {
 }
 ```
 * 람다에서는 타입 이름을 자주 생략하므로 매개변수 이름을 잘 지어야 스트림 파이프라인 가독성이 유지된다
-* 도우미 메서드를 적절히 활용
+* 도우미 메서드를 적절히 활용 (e.g. alphabetize)
 * 기존 코드는 스트림을 사용하도록 리팩터링 (더 나아질 때만)
 
 <br><br>
@@ -132,6 +132,23 @@ public static void main(String[] args) throws IOException {
 * 메서드 선언에 명시된 예외(Exception)을 던질 수 있다
 * 하지만 람다로는 불가능한 것들
 
+``` java
+// stream + lambda 에서 순차증가하는 방법
+
+// 배열 이용. 멀티스레드에선 안전X
+int[] count = {0};
+IntStream.range(0, 1000000).forEach((i) -> {
+    count[0]++;
+    System.out.println(count[0]);
+});
+ 
+// Atomic Reference 이용. 권장
+AtomicInteger count = new AtomicInteger();
+IntStream.range(0, 1000000).forEach((i) -> {
+    System.out.println(count.incrementAndGet());
+});
+```
+
 <br>
 
 ## 이럴 때 스트림을 사용하자
@@ -141,6 +158,14 @@ public static void main(String[] args) throws IOException {
 * 원소들의 시퀀스를 하나의 연산을 사용해 결합한다
 * 원소들의 시퀀스를 컬렉션에 모은다
 * 원소들의 시퀀스에서 특정 조건을 만족하는 원소를 찾는다
+
+<br>
+
+## 이럴 때 스트림을 사용하지 말자
+
+* 스트림 파이프라인이 여러 연산단계로 구성될 때, 각 단계의 값들을 동시에 접근하고자 할때
+  * 스트림 파이프라인은 연산이 지나가면 원래값을 잃는 구조이기 때문이다.
+  * cf. 매핑객체를 이용하면 방법이 있으나 지저분해짐
 
 <br><br>
 
@@ -172,5 +197,6 @@ private static List<Card> newDeck() {
 }
 ```
 
-> 스트림과 반복 중 어느 쪽이 나은지 확신하기 어렵다면 둘 다 해보고 더 나은 쪽을 택
-> 함수형 프로그래밍에 익숙하다면 스트림을 써보는게 어떨까?
+> * 스트림과 반복 중 어느 쪽이 나은지 확신하기 어렵다면 둘 다 해보고 더 나은 쪽을 택
+> * 스트림과 반복을 잘 조합해서 사용하는 것이 제일 좋다
+> * 함수형 프로그래밍에 익숙하다면 스트림을 시도해보자

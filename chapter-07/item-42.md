@@ -50,6 +50,10 @@ public class Main {
 ## 람다 (Lambda)
 
 * `JDK 1.8` 부터는 함수형 인터페이스를 만드는데 해당 인터페이스의 인스턴스를 람다식을 사용해 만들 수 있게 되었다
+* 컴파일러가 알아서 반환 타입, 매개변수 타입을 추론하여 넣어준다 (컴파일러가 추론못하겠다고 오류를 뱉을 때만 직접 명시)
+* 람다는 Lambda Factory 라고 불리는 call site 에 각종 정보(외부인자값 등)와 함께 저장
+  * invokedynamic 명령어를 통해 메소드가 동적으로 바인딩되고 MethodHandle로 실행된다
+* 익명내부클래스는 class load, new 로 객체를 생성할 때 메모리 할당, 초기화 등의 비용이 들어가지만, 람다는 컴파일 타임의 활동(jvm bytecode 레벨에서 invokedynamic 추가)이므로 런타임에 추가비용이 크지 않다
 
 ``` java
 import java.util.Arrays;

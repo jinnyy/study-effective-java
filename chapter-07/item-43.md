@@ -17,6 +17,7 @@
 함수 객체를 람다보다도 간결하게 만드는 방법
 * 매개변수가 늘어날수록 메서드 참조로 줄일 수 있는 코드량이 많다
 * (동시에 매개변수의 이름이 좋은 가이드가 되기도 한다)
+* intelliJ도 메서드 참조를 사용하라고 워닝을 띄운다
 
 ``` java 
 //java 8 map안에 추가된 merge
@@ -44,6 +45,9 @@ class GoshThisClassnameIsHumongous{
     service.execute(() -> action());
 }
 ```
+* Function.identity() 보단  x -> x 
+* 다만, 위의 둘은 완전히 같지 않다: (https://stackoverflow.com/questions/28032827/java-8-lambdas-function-identity-or-t-t)
+
 <br><br>
 
 ## 메소드 참조의 유형
@@ -54,8 +58,16 @@ class GoshThisClassnameIsHumongous{
 * 클래스 생성자 (`TreeMap<K, V>::new`)
 * 배열 생성자 (`int[]::new`)
 
+<br><br>
+
+## Call Stack 관점
+
+* userList.forEach(user -> System.out.println(user)); : ArrayList.forEach -> Consumer.accept -> System.out.println
+* userList.forEach(System.out::println); : Consumer.accept 생략
+* (https://softwareengineering.stackexchange.com/questions/277473/is-there-a-performance-benefit-to-using-the-method-reference-syntax-instead-of-l)
 
 <br><br>
+
 
 > 메소드 참조는 람다의 대안이 될 수 있다
 > 메소드 참조 쪽이 더 간결할 때 사용

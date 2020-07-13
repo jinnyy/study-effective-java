@@ -69,6 +69,6 @@
 * [아이템 43. 람다보다는 메소드 참조를 사용하라](https://github.com/jinnyy/study-effective-java/blob/master/chapter-07/item-43.md)
 * [아이템 44. 표준 함수형 인터페이스를 사용하라](https://github.com/jinnyy/study-effective-java/blob/master/chapter-07/item-44.md)
 * [아이템 45. 스트림은 주의해서 사용하라](https://github.com/jinnyy/study-effective-java/blob/master/chapter-07/item-45.md)
-* [아이템 46. 스트림에서는 부작용없는 함수를 사용하라]()
-* [아이템 47. 반환 타입으로는 스트림보다 컬렉션이 낫다]()
-* [아이템 48. 스트림 병렬화는 주의해서 적용하라]()
+* 아이템 46. 스트림에서는 부작용없는 함수를 사용하라
+* 아이템 47. 반환 타입으로는 스트림보다 컬렉션이 낫다
+* 아이템 48. 스트림 병렬화는 주의해서 적용하라

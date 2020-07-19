@@ -29,7 +29,7 @@ a.k.a. API 설계 요령 모음집
 - 해결책 2) 매개변수 여러 개를 묶어주는 도우미 클래스를 만든다
    - as-is: `pickupCard(RankEnum rank, SuitEnum suit)`
    - to-be: `pickupCard(Card card)`
-- 해결책 3) [빌더 패턴](chapter-02/item-02.md)을 메서드 호출에 응용한다
+- 해결책 3) [빌더 패턴](../chapter-02/item-02.md)을 메서드 호출에 응용한다
 
 <br>
 

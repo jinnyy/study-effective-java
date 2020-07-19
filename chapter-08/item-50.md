@@ -5,8 +5,8 @@
 🤓 불변식(**시작 시각이 종료 시각보다 늦을 수 없다**)을 지키지 못한 클래스 :
 ```java
 public final class Period {
-  private final Date Start;
-  private final Date end;
+  private final Date Start; // 가변 객체
+  private final Date end;   // 가변 객체
   
   public  Period(Date start, Date end) {
     if (start.compareTo(end) > 0)

@@ -48,7 +48,7 @@
    
    > EnumSet의 정적 팩토리도 이 기법을 사용해 열거타입 집합 생성 비용을 최소화한다
    
-   ![image-20200802193632887](/Users/sungchan/Library/Application Support/typora-user-images/image-20200802193632887.png)
+   ![image](https://user-images.githubusercontent.com/16698414/89122749-d9ddd200-d504-11ea-8861-e2fe3c55136d.png)
 
 
 

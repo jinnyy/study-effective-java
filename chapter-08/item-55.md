@@ -5,7 +5,7 @@
 자바8 이전에 메서드가 값을 반환 할 수 없을 때 취할 수 있는 선택지는 크게 두가지 였다.
 
 
-
+<br>
 1. null 반환
 
    **문제점**
@@ -30,7 +30,7 @@
 
 
 
-
+<br><br>
 
 ## 주의점
 
@@ -59,13 +59,13 @@ public static <E extends Comparable<E>> Optional<E> max(Collection<E> c) {
 
 null이 의심되는 상황에서는 Collection.emptyList(혹은 Map 등..)을 사용하지, Optional을 사용하는것은 바람직하지 않다.
 
-
+<br>
 
 ### 박싱된 기본 타입 옵셔널
 
 OptionalInt, OptionalLong, OptionalDouble을 사용하자.
 
-
+<br>
 
 ### Map의 값으로 사용
 
@@ -74,8 +74,8 @@ OptionalInt, OptionalLong, OptionalDouble을 사용하자.
 만약 사용할 경우, 맵안에 키가 없다는 사실을 나타내는 방법이 두가지나 생기게 되는것이므로 쓸데없는 복잡성을 야기한다.
 
 
-
-
+<br>
+<br>
 
 ## 어떻게 사용하나요
 
@@ -85,7 +85,7 @@ OptionalInt, OptionalLong, OptionalDouble을 사용하자.
 
 즉, 결과가 없을 수 있으며, 클라이언트가 상황을 특별하게 처리해야 하는 경우 사용한다.
 
-
+<br>
 
 옵셔널은 검사 예외와 취지가 비슷하다. 따라서 메서드 또한, Null일 경우와 아닐경우의 대신할 값을 설정하는 방식이다.
 
@@ -119,7 +119,7 @@ Optional은 엄연히 새로 할당해서 생성해주어야 하는 객체이고
 
 
 
-
+<br>
 
 ## 고급 메서드 사용 예시
 

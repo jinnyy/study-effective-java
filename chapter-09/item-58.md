@@ -56,7 +56,7 @@ public static void main(String[] args) {
 <br><br>
 
 ## for-each문을 사용할 수 없는 상황
-아래의 상황 중 하나에 속할 때는 일반적인 for문을 사용하되 [이번 아이템에서 언급한 문제들](#for-each를 사용하지 않았을 때 문제점)을 경계하기 바람
+아래의 상황 중 하나에 속할 때는 일반적인 for문을 사용하되 [이번 아이템에서 언급한 문제들](#for-each를-사용하지-않았을-때-문제점)을 경계하기 바람
 
 1. 파괴적인 필터링 (destructive filtering)
   - 컬렉션을 순회하면서 제거해야 한다면 iterator의 remove 메서드를 호출해야 한다.

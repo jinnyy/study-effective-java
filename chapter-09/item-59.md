@@ -14,10 +14,25 @@
 5. (라이브러리를 사용한 코드는) 많은 사람들에게 낯익은 코드가 된다.
     - 다른 개발자들이 더 읽기 좋고, 유지보수하기 좋고, 재활용하기 쉬운 코드가 된다.
 
+<br>
+
 :bomb: 하지만 실상은 많은 프로그래머들이 직접 구현해서 쓰고 있다.
 아마도 라이브러리에 그런 기능이 있는지 잘 모르기 때문일 것이다..
 
-<br><br>
+<br>
+
+#### 예 - 코드 59-2 transferTo 메서드를 이용해 URL의 내용 가져오기 - 자바 9부터 가능하다. (353쪽)
+``` java
+public class Curl {
+    public static void main(String[] args) throws IOException {
+        try (InputStream in = new URL(args[0]).openStream()) {
+            in.transferTo(System.out);
+        }
+    }
+}
+```
+
+<br><br><br>
 
 
 ## 라이브러리 활용
@@ -29,3 +44,4 @@
 * 그래도 못 찾았다면, 직접 구현
 
 
+<br><br>

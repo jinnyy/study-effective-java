@@ -44,6 +44,7 @@ public static void main(String[] args) {
 ### BigDecimal
 장점
 - 정확한 값을 얻을 수 있다.
+
 단점
 - 기본 타입보다 쓰기가 훨씬 불편하다.
 - 기본 타입보다 훨씬 느리다.

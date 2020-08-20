@@ -71,6 +71,7 @@ public static void main(String[] args) {
 대안으로 int나 long을 사용 가능하다.
 - 다룰 수 있는 값의 크기가 제한됨
 - 소수점을 직접 관리해야 함
+- 열여덟 자리를 넘어가면 BigDecimal을 사용해야 함
 (이 예시에서는 달러 대신 센트로 연산을 수행하면 해결됨)
 
 

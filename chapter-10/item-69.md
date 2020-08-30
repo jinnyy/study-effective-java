@@ -30,6 +30,8 @@ try {
    * https://stackoverflow.com/questions/16451777/is-it-expensive-to-use-try-catch-blocks-even-if-an-exception-is-never-thrown
 3. 배열을 순회하는 표준 관용구는 앞서 걱정한 중복 검사를 수행하지 않는다. JVM이 알아서 최적화해 없애준다.
 
+<br>
+
 또, 제대로 동작하지 않을 수도 있다. 반복문 안에 버그가 숨어 있다면 흐름 제어를 쓰인 예외 처리가 이 버그를 숨겨 디버깅을 더 어렵게 할 것이다. 
 
 그러므로 예외는 예외 상황에서만 사용하자! **일상적인 제어 흐름용으로 쓰여선 안 된다.**

@@ -41,16 +41,18 @@ try {
 1. 특정 상태에서만 호출될 수 있는 **상태 의존적 메서드**를 제공하는 클래스는, **상태 검사 메서드**도 함께 제공하라.
    * ex. `Iterator`의 `hasNext`
 
-👍 굿~
+
 ```java
+// 👍 굿~
+
 for (Iterator<Foo> i = collection.iterator(); i.hasNext(); ) {
   Foo foo = i.next();
   ...
 }
 ```
-
-👎 우~
 ```java
+// 👎 우~
+
 try {
   Iterator<Foo> i = collection.iterator();
   while(true) {

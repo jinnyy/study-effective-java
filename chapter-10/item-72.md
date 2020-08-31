@@ -16,7 +16,7 @@
 |   `IllegalStateException`            |   객체가 메서드를 수행하기에 적절하지 않은 상태일 때                                 |                                                                            |
 |   `NullPointerException`             |   Null을 허용하지 않는 메서드에 null을 건넸을 때                                     |                                                                            |
 |   `IndexOutOfBoundsException`        |   인덱스가 범위를 넘어섰을 때                                                        |                                                                            |
-|   `ConcurrentModificationException`  |   허용하지 않는 동시 수정이 발견됐을 때 (문제가 생길 가능성을 알려주는 정도의 역할)  |   단일 스레드에서 사용하려고 설계한 객체를 여러 스레드가 동시에 수정할 때  |
+|   `ConcurrentModificationException`  |   허용하지 않는 동시 수정이 발견됐을 때  |   단일 스레드에서 사용하려고 설계한 객체를 여러 스레드가 동시에 수정할 때  |
 |   `UnsupportedOperationException`    |   호출한 메서드를 지원하지 않을 때                                                   |   원소를 넣을 수만 있는 List 구현체에 remove를 호출했을 때                 |
 
 <br>

@@ -11,10 +11,6 @@ try {
 }
 ```
 
-🤔 표준적인 관용구(foreach loop)대로 작성하면 같은 기능의 상태 검사를 두 번 (배열 접근시, 반복문 순회시) 하니까 성능이 구려지겠지?
-
--> No..
-
 <br>
 
 > 최적화를 할 때는 다음 두 규칙을 따르라.
@@ -28,7 +24,8 @@ try {
 
 2. 코드를 try-catch 블록 안에 넣으면 JVM이 적용할 수 있는 최적화가 제한된다
    * https://stackoverflow.com/questions/16451777/is-it-expensive-to-use-try-catch-blocks-even-if-an-exception-is-never-thrown
-3. 배열을 순회하는 표준 관용구는 앞서 걱정한 중복 검사를 수행하지 않는다. JVM이 알아서 최적화해 없애준다.
+3. 배열을 순회하는 표준 관용구는 JVM이 알아서 최적화해 중복 검사를 수행하지 않는다.
+   * JVM의 배열 경계 검사와 반복문에서 배열 경계 검사
 
 <br>
 

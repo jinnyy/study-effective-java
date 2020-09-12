@@ -1,11 +1,16 @@
 # item 78. 공유 중인 가변 데이터는 동기화해 사용하라
 
+<br>
+
+|                        | 원자성 (배타적 실행) | 스레드 간 통신 |
+|------------------------|----------------------|----------------|
+| `synchronized`         |           O          |        O       |
+| `volatile`             |           X          |        O       |
+| special types          |           O          |        O       |
+| long, double 이외 타입 |           O          |        X       |
+
 <br><br><br>
 
-
-* `synchronized` 키워드는 해당 메소드나 블록을 한 번에 한 스레드씩 수행하도록 보장
-
-<br>
 
 ## 동기화의 기능
 1. 배타적 실행: 스레드가 한 객체에 접근할 떄 lock을 걸고, 다른 스레드에서 접근 못 함
@@ -25,6 +30,8 @@
 	- 데이터가 훼손되어 의도와 다른 결과가 발생 가능하다.
 * 스레드를 멈추는 올바른 방법
 	- 조건
+
+<br>
 
 ### 예 - 동기화되지 않은 경우
 (boolean 필드를 읽고 쓰는 작업은 원자적이라서 동기화를 제거한 경우)
@@ -50,7 +57,7 @@ public class StopThread {
 - 바뀐 stopRequested 값이 보이지 않아 멈추지 않았다.
 - 원인: 동기화
 
-#### 동기화하지 않은 경우
+<br>
 
 최적화 전
 ``` java
@@ -66,6 +73,8 @@ if (!stopRequested)
 ```
 
 > OpenJDK 서버 VM에서 적용하는 끌어올리기(hoisting) 최적화 기법
+
+<br>
 
 
 ### 해결 1 - `synchronized`
@@ -104,6 +113,7 @@ public class StopThread {
 > #### 참고
 > 예시의 경우에는 `2. 스레드 간 통신` 목적으로만 사용된 것
 
+<br>
 
 
 ### 해결 2 - `volatile`
@@ -130,6 +140,7 @@ public class StopThread {
 }
 ```
 
+<br><br>
 
 단, volatile은 주의해서 사용해야 한다. 
 
@@ -157,6 +168,7 @@ public static int generateSerialNumber() {
 > #### 안전 실패
 > * 프로그램이 잘못된 결과를 계산해내는 위와 같은 오류
 
+<br>
 
 ### 해결
 1. 동기화하면 된다.
@@ -182,24 +194,7 @@ public static long generateSerialNumber() {
 * 안전 발행(safe publication): 다른 스레드에 사실상 불변인 객체를 건네는 행위
 
 
-
-<br>
+<br><br>
 
 > #### 참고
 > * [사실상 불변](https://sysgears.com/articles/effectively-immutable-objects/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

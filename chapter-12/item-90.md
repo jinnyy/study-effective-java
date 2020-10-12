@@ -2,7 +2,7 @@
 
 바깥 클래스의 논리적 상태를 정밀하게 표현하는 중첩 클래스(= 직렬화 프로시)를 설계해 `private static`으로 선언한다
 
-* 직렬화의 생성자를 이용하지 않고 인스턴스를 생성하는 기능을 제거함에 따라, 버그와 보안 문제를 
+* 직렬화의 생성자를 이용하지 않고 인스턴스를 생성하는 기능을 제거하여 버그와 보안 문제를 줄일 수 있다
 
 ```java
 public class Period implements Serializable {
@@ -72,6 +72,4 @@ private static class SerializationProxy <E extends Enum<E>> implements Serializa
 ### 직렬화 프록시 패턴의 한계
 
 * 클라이언트가 확장할 수 있는 클래스 혹은 객체 그래프에 순환이 있는 클래스에는 적용할 수 없다
-
-  * 직렬화 프록시만 가졌을 뿐 실제 객체는 아직 만들어지지 않았기 때문에 `ClassCastException` 발생
 * 퍼포먼스 저하 (저자피셜 14% 느림)

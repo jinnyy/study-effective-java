@@ -78,9 +78,9 @@ public class MutablePeriod {
       out.writeObject(new Period(new Date(), new Date()));
       
       byte[] ref = { 0x71, 0, 0x7e, 0, 5 };
-      bos.write(ref);
+      bos.write(ref); // start 필드
       ref[4] = 4;
-      bos.write(ref);
+      bos.write(ref); // end 필드
       
       // Period 역직렬화 후 Date 참조를 '훔친다'
       ObjectInputStream in = new ObjectInputStream(

@@ -135,7 +135,6 @@ private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundEx
   * `private`이어야 하는 객체 참조 필드는 각 필드가 가리키는 객체를 **방어적 복사**하라. 불변 클래스 내의 가변 요소가 여기 속한다.
   * 모든 불변식을 검사하여 어긋나는 게 발견되면 `InvalidObjectException`을 던진다. 방어적 복사 다음에는 반드시 **불변식 검사**가 뒤따라야 한다.
   * 역직렬화 후 객체 그래프 전체의 유효성을 검사해야 한다면 `ObjectInputValidation` 인터페이스를 사용하라
-  * (final이 아닌 직렬화 가능 클래스라면) 재정의 가능 메서드를 호출하지 말자
 
 * 기존 `readObject` 메서드를 써도 좋을지 판단하는 간단한 방법
 

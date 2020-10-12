@@ -1,6 +1,6 @@
 # item 90. 직렬화된 인스턴스 대신 직렬화 프록시 사용을 검토하라
 
-바깥 클래스의 논리적 상태를 정밀하게 표현하는 중첩 클래스(바깥 클래스의 직렬화 프로시)를 설계해 `private static`으로 선언하다
+바깥 클래스의 논리적 상태를 정밀하게 표현하는 중첩 클래스(= 직렬화 프로시)를 설계해 `private static`으로 선언한다
 
 * 직렬화의 생성자를 이용하지 않고 인스턴스를 생성하는 기능을 제거함에 따라, 
 * 역직렬화한 인스턴스와 원래의 직렬화된 인스턴스의 클래스가 달라도 정상 작동한다
@@ -41,7 +41,10 @@ public class Period implements Serializable {
 }
 ```
 
-* EnumSet의 직렬화 프록시
+* 직렬화 프록시 패턴은 역직렬화한 인스턴스와 원래의 직렬화된 인스턴스의 클래스가 달라도 정상 작동한다
+
+  * `EnumSet`은 (내부적으로) 열거 타입의 원소가 64개 이하면 `RegularEnumSet`을 사용하고 그보다 크면 `JumboEnumSet`을 사용한다
+  * 직렬화 프록시 패턴에서는 원소 64개짜리 열거 타입을 가진 EnumSet을 직렬화한 다음 원소 5개를 추가하고 역직렬화해도 정상 작동한다
 
 ```java
 private static class SerializationProxy <E extends Enum<E>> implements Serializable {
